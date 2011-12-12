@@ -1,0 +1,79 @@
+class AddNewFieldsToProfiles < ActiveRecord::Migration
+  def self.up
+    add_column :profiles, :ensino_fundamental_type, :string
+    add_column :profiles, :ensino_fundamental_school_name, :string
+    add_column :profiles, :ensino_fundamental_school_city, :string
+    add_column :profiles, :ensino_fundamental_school_state, :string
+    add_column :profiles, :ensino_fundamental_school_country, :string
+    add_column :profiles, :ensino_medio_type, :string
+    add_column :profiles, :ensino_medio_school_name, :string
+    add_column :profiles, :ensino_medio_school_city, :string
+    add_column :profiles, :ensino_medio_school_state, :string
+    add_column :profiles, :ensino_medio_school_country, :string
+    add_column :profiles, :ensino_superior_type, :string
+    add_column :profiles, :ensino_superior_school_name, :string
+    add_column :profiles, :ensino_superior_school_course, :string
+    add_column :profiles, :ensino_superior_school_status, :integer
+    add_column :profiles, :ensino_superior_school_period, :integer
+    add_column :profiles, :ensino_superior_school_city, :string
+    add_column :profiles, :ensino_superior_school_state, :string
+    add_column :profiles, :ensino_superior_school_country, :string
+    add_column :profiles, :specialization_course_type, :string
+    add_column :profiles, :specialization_school_name, :string
+    add_column :profiles, :specialization_course_status, :integer
+    add_column :profiles, :specialization_period, :integer
+    add_column :profiles, :specialization_monograph, :text
+    add_column :profiles, :specialization_monograph_area, :string
+    add_column :profiles, :specialization_monograph_url, :string
+    add_column :profiles, :specialization_school_city, :string
+    add_column :profiles, :specialization_school_state, :string
+    add_column :profiles, :specialization_school_country, :string
+    add_column :profiles, :master_degree_school_type, :string
+    add_column :profiles, :master_degree_school_name, :string
+    add_column :profiles, :master_degree_area, :string
+    add_column :profiles, :master_degree_status, :integer
+    add_column :profiles, :master_degree_period, :integer
+    add_column :profiles, :master_degree_dissertation_area, :string
+    add_column :profiles, :master_degree_dissertation_name, :text
+    add_column :profiles, :master_degree_dissertation_url, :string
+    add_column :profiles, :master_degree_school_city, :string
+    add_column :profiles, :master_degree_school_state, :string
+    add_column :profiles, :master_degree_school_country, :string
+    add_column :profiles, :doctoral_school_type, :string
+    add_column :profiles, :doctoral_school_name, :string
+    add_column :profiles, :doctoral_area, :string
+    add_column :profiles, :doctoral_status, :integer
+    add_column :profiles, :doctoral_period, :integer
+    add_column :profiles, :doctoral_dissertation_area, :string
+    add_column :profiles, :doctoral_dissertation_name, :text
+    add_column :profiles, :doctoral_dissertation_url, :string
+    add_column :profiles, :doctoral_school_city, :string
+    add_column :profiles, :doctoral_school_state, :string
+    add_column :profiles, :doctoral_school_country, :string
+    add_column :profiles, :postdoctoral_school_type, :string
+    add_column :profiles, :postdoctoral_school_name, :string
+    add_column :profiles, :postdoctoral_area, :string
+    add_column :profiles, :postdoctoral_status, :integer
+    add_column :profiles, :postdoctoral_period, :integer
+    add_column :profiles, :postdoctoral_dissertation_area, :string
+    add_column :profiles, :postdoctoral_dissertation_name, :text
+    add_column :profiles, :postdoctoral_dissertation_url, :string
+    add_column :profiles, :postdoctoral_school_city, :string
+    add_column :profiles, :postdoctoral_school_state, :string
+    add_column :profiles, :postdoctoral_school_country, :string
+    add_column :profiles, :livre_docencia_type, :string
+    add_column :profiles, :livre_docencia_school_name, :string
+    add_column :profiles, :livre_docencia_area, :string
+    add_column :profiles, :livre_docencia_status, :integer
+    add_column :profiles, :livre_docencia_period, :integer
+    add_column :profiles, :livre_docencia_dissertation_area, :string
+    add_column :profiles, :livre_docencia_dissertation_name, :text
+    add_column :profiles, :livre_docencia_dissertation_url, :string
+    add_column :profiles, :livre_docencia_school_city, :string
+    add_column :profiles, :livre_docencia_school_state, :string
+    add_column :profiles, :livre_docencia_school_country, :string
+  end
+
+  def self.down
+  end
+end

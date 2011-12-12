@@ -1,0 +1,6 @@
+.foreign_languages
+  - @i = 0
+  - f.fields_for :languages do |builder|
+    = render "languages_fields", :f => builder
+    - @i += 1
+  %br

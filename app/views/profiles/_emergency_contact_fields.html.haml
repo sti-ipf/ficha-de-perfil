@@ -1,0 +1,16 @@
+.fields
+  .field
+    = f.input :name, :as => :string
+  .field
+    = f.input :relationship, :as => :string
+  .field
+    = f.input :contact, :as => :string
+  .field
+    = f.input :phone, :as => :string
+  .field
+    = f.input :mobile, :as => :string
+  .field
+    = f.input :email, :as => :string
+  %br
+  = link_to_remove_fields t('remove'), f
+  %br

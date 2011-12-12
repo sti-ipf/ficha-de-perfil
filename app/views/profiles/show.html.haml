@@ -1,0 +1,398 @@
+.white-box
+  = link_to t('back'), profiles_path, :class => 'back_link'
+  %p
+    %b= t('activerecord.attributes.profile.name')
+    = @profile.name
+  %p
+    %b= t('activerecord.attributes.profile.dob')
+    = @profile.dob.try(:strftime, "%d/%m/%Y")
+  %p
+    %b= t('activerecord.attributes.profile.nationality')
+    = @profile.nationality
+  %p
+    %b= t('activerecord.attributes.profile.naturally')
+    = @profile.naturally
+  %p
+    %b= t('activerecord.attributes.profile.associated_id')
+    = @profile.associated_id
+  %p
+    %b= t('activerecord.attributes.profile.start_date')
+    = @profile.start_date
+  %p
+    %b= t('activerecord.attributes.profile.civil_status')
+    = @profile.civil_status
+  %p
+    %b= t('activerecord.attributes.profile.cpf')
+    = @profile.cpf
+  %p
+    %b= t('activerecord.attributes.profile.rg')
+    = @profile.rg
+  %p
+    %b= t('activerecord.attributes.profile.cep')
+    = @profile.cep
+  %p
+    %b= t('activerecord.attributes.profile.street')
+    = @profile.street
+  %p
+    %b= t('activerecord.attributes.profile.address_number')
+    = @profile.address_number
+  %p
+    %b= t('activerecord.attributes.profile.district')
+    = @profile.district
+  %p
+    %b= t('activerecord.attributes.profile.city')
+    = @profile.city
+  %p
+    %b= t('activerecord.attributes.profile.state')
+    = @profile.state
+  -#  
+    %p
+      %b Company phone number:
+      = @profile.company_phone_number
+    %p
+      %b Phone:
+      = @profile.phone
+    %p
+      %b Mobile:
+      = @profile.mobile
+    %p
+      %b Unifreire:
+      = @profile.unifreire_id
+    %p
+      %b Twitter:
+      = @profile.twitter
+    %p
+      %b Facebook:
+      = @profile.facebook
+    %p
+      %b Another social networks:
+      = @profile.another_social_networks
+    %p
+      %b Curriculum lattes:
+      = @profile.curriculum_lattes
+    %p
+      %b Smoker:
+      = @profile.smoker
+    %p
+      %b Has disability:
+      = @profile.has_disability
+    %p
+      %b Disability desc:
+      = @profile.disability_desc
+    %p
+      %b Take medicenes:
+      = @profile.take_medicenes
+    %p
+      %b Medicenes desc:
+      = @profile.medicenes_desc
+    %p
+      %b Allergic:
+      = @profile.allergic
+    %p
+      %b Allergic desc:
+      = @profile.allergic_desc
+    %p
+      %b Blood type:
+      = @profile.blood_type
+    %p
+      %b Cronic disease:
+      = @profile.cronic_disease
+    %p
+      %b Cronic disease desc:
+      = @profile.cronic_disease_desc
+    %p
+      %b Last vacation:
+      = @profile.last_vacation
+    %p
+      %b Next vacation:
+      = @profile.next_vacation
+    %p
+      %b Deslocation time by google:
+      = @profile.deslocation_time_by_google
+    %p
+      %b Deslocation time:
+      = @profile.deslocation_time
+    %p
+      %b Dependents:
+      = @profile.dependents
+    %p
+      %b Formation:
+      = @profile.formation
+    %p
+      %b Ensino fundamental type:
+      = @profile.ensino_fundamental_type
+    %p
+      %b Ensino fundamental school name:
+      = @profile.ensino_fundamental_school_name
+    %p
+      %b Ensino fundamental school city:
+      = @profile.ensino_fundamental_school_city
+    %p
+      %b Ensino fundamental school state:
+      = @profile.ensino_fundamental_school_state
+    %p
+      %b Ensino fundamental school country:
+      = @profile.ensino_fundamental_school_country
+    %p
+      %b Ensino medio type:
+      = @profile.ensino_medio_type
+    %p
+      %b Ensino medio school name:
+      = @profile.ensino_medio_school_name
+    %p
+      %b Ensino medio school city:
+      = @profile.ensino_medio_school_city
+    %p
+      %b Ensino medio school state:
+      = @profile.ensino_medio_school_state
+    %p
+      %b Ensino medio school country:
+      = @profile.ensino_medio_school_country
+    %p
+      %b Ensino superior type:
+      = @profile.ensino_superior_type
+    %p
+      %b Ensino superior school name:
+      = @profile.ensino_superior_school_name
+    %p
+      %b Ensino superior school course:
+      = @profile.ensino_superior_school_course
+    %p
+      %b Ensino superior school course status:
+      = @profile.ensino_superior_school_status
+    %p
+      %b Ensino superior school period:
+      = @profile.ensino_superior_school_period
+    %p
+      %b Ensino superior school city:
+      = @profile.ensino_superior_school_city
+    %p
+      %b Ensino superior school state:
+      = @profile.ensino_superior_school_state
+    %p
+      %b Ensino superior school country:
+      = @profile.ensino_superior_school_country
+    %p
+      %b Specialization course type:
+      = @profile.specialization_course_type
+    %p
+      %b Specialization school name:
+      = @profile.specialization_school_name
+    %p
+      %b Specialization course status:
+      = @profile.specialization_course_status
+    %p
+      %b Specialization period:
+      = @profile.specialization_period
+    %p
+      %b Specialization monograph:
+      = @profile.specialization_monograph
+    %p
+      %b Specialization monograph area:
+      = @profile.specialization_monograph_area
+    %p
+      %b Specialization monograph url:
+      = @profile.specialization_monograph_url
+    %p
+      %b Specialization school city:
+      = @profile.specialization_school_city
+    %p
+      %b Specialization school state:
+      = @profile.specialization_school_state
+    %p
+      %b Specialization school country:
+      = @profile.specialization_school_country
+    %p
+      %b Master degree school type:
+      = @profile.master_degree_school_type
+    %p
+      %b Master degree school name:
+      = @profile.master_degree_school_name
+    %p
+      %b Master degree area:
+      = @profile.master_degree_area
+    %p
+      %b Master degree status:
+      = @profile.master_degree_status
+    %p
+      %b Master degree period:
+      = @profile.master_degree_period
+    %p
+      %b Master degree dissertation area:
+      = @profile.master_degree_dissertation_area
+    %p
+      %b Master degree dissertation name:
+      = @profile.master_degree_dissertation_name
+    %p
+      %b Master degree dissertation url:
+      = @profile.master_degree_dissertation_url
+    %p
+      %b Master degree school city:
+      = @profile.master_degree_school_city
+    %p
+      %b Master degree school state:
+      = @profile.master_degree_school_state
+    %p
+      %b Master degree school country:
+      = @profile.master_degree_school_country
+    %p
+      %b Doctoral school type:
+      = @profile.doctoral_school_type
+    %p
+      %b Doctoral school name:
+      = @profile.doctoral_school_name
+    %p
+      %b Doctoral area:
+      = @profile.doctoral_area
+    %p
+      %b Doctoral status:
+      = @profile.doctoral_status
+    %p
+      %b Doctoral period:
+      = @profile.doctoral_period
+    %p
+      %b Doctoral dissertation area:
+      = @profile.doctoral_dissertation_area
+    %p
+      %b Doctoral dissertation name:
+      = @profile.doctoral_dissertation_name
+    %p
+      %b Doctoral dissertation url:
+      = @profile.doctoral_dissertation_url
+    %p
+      %b Doctoral school city:
+      = @profile.doctoral_school_city
+    %p
+      %b Doctoral school state:
+      = @profile.doctoral_school_state
+    %p
+      %b Doctoral school country:
+      = @profile.doctoral_school_country
+    %p
+      %b Postdoctoral school type:
+      = @profile.postdoctoral_school_type
+    %p
+      %b Postdoctoral school name:
+      = @profile.postdoctoral_school_name
+    %p
+      %b Postdoctoral area:
+      = @profile.postdoctoral_area
+    %p
+      %b Postdoctoral status:
+      = @profile.postdoctoral_status
+    %p
+      %b Postdoctoral period:
+      = @profile.postdoctoral_period
+    %p
+      %b Postdoctoral dissertation area:
+      = @profile.postdoctoral_dissertation_area
+    %p
+      %b Postdoctoral dissertation name:
+      = @profile.postdoctoral_dissertation_name
+    %p
+      %b Postdoctoral dissertation url:
+      = @profile.postdoctoral_dissertation_url
+    %p
+      %b Postdoctoral school city:
+      = @profile.postdoctoral_school_city
+    %p
+      %b Postdoctoral school state:
+      = @profile.postdoctoral_school_state
+    %p
+      %b Postdoctoral school country:
+      = @profile.postdoctoral_school_country
+    %p
+      %b Livre docencia type:
+      = @profile.livre_docencia_type
+    %p
+      %b Livre docencia school name:
+      = @profile.livre_docencia_school_name
+    %p
+      %b Livre docencia area:
+      = @profile.livre_docencia_area
+    %p
+      %b Livre docencia status:
+      = @profile.livre_docencia_status
+    %p
+      %b Livre docencia period:
+      = @profile.livre_docencia_period
+    %p
+      %b Livre docencia dissertation area:
+      = @profile.livre_docencia_dissertation_area
+    %p
+      %b Livre docencia dissertation name:
+      = @profile.livre_docencia_dissertation_name
+    %p
+      %b Livre docencia dissertation url:
+      = @profile.livre_docencia_dissertation_url
+    %p
+      %b Livre docencia school city:
+      = @profile.livre_docencia_school_city
+    %p
+      %b Livre docencia school state:
+      = @profile.livre_docencia_school_state
+    %p
+      %b Livre docencia school country:
+      = @profile.livre_docencia_school_country
+    %p
+      %b Author coauthor:
+      = @profile.author_coauthor
+    %p
+      %b Books:
+      = @profile.books
+    %p
+      %b Text editor level:
+      = @profile.text_editor_level
+    %p
+      %b Spreadsheet editor level:
+      = @profile.spreadsheet_editor_level
+    %p
+      %b Presentation editor level:
+      = @profile.presentation_editor_level
+    %p
+      %b Browser level:
+      = @profile.browser_level
+    %p
+      %b Email level:
+      = @profile.email_level
+    %p
+      %b Os level:
+      = @profile.os_level
+    %p
+      %b Vetorial image editor level:
+      = @profile.vetorial_image_editor_level
+    %p
+      %b Photo editor level:
+      = @profile.photo_editor_level
+    %p
+      %b Media player level:
+      = @profile.media_player_level
+    %p
+      %b Worked in public school:
+      = @profile.worked_in_public_school
+    %p
+      %b Work in another institution:
+      = @profile.work_in_another_institution
+    %p
+      %b Another institution name:
+      = @profile.another_institution_name
+    %p
+      %b Another institution contact:
+      = @profile.another_institution_contact
+    %p
+      %b Another institution site:
+      = @profile.another_institution_site
+    %p
+      %b Partner in another company:
+      = @profile.partner_in_another_company
+    %p
+      %b Another company name:
+      = @profile.another_company_name
+    %p
+      %b Another company contact:
+      = @profile.another_company_contact
+    %p
+      %b Another company site:
+      = @profile.another_company_site
+
+    

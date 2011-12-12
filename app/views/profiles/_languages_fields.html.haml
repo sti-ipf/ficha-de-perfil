@@ -1,0 +1,10 @@
+.fields
+  .field
+    = label_tag @languages_array[@i]
+    = f.input :fluent, :as => :check_boxes, :collection => [t('yyes')]
+    = f.input :conversation, :as => :check_boxes, :collection => [t('yyes')]
+    = f.input :read, :as => :check_boxes, :collection => [t('yyes')]
+    = f.input :write, :as => :check_boxes, :collection => [t('yyes')]
+  .field
+    = f.input :foreign_language_id, :as => :hidden
+  %br

@@ -1,0 +1,192 @@
+:javascript
+  $(document).ready(function() {
+    if ($("#profile_has_disability_sim").is(':checked')){
+      jQuery('#disability_desc_div').attr('style','display:block; !important');
+    }
+    if ($("#profile_take_medicenes_sim").is(':checked')){
+      jQuery('#medicenes_desc_div').attr('style','display:block; !important');
+    }
+    if ($("#profile_allergic_sim").is(':checked')){
+      jQuery('#allergic_desc_div').attr('style','display:block; !important');
+    }
+    if ($("#profile_cronic_disease_sim").is(':checked')){
+      jQuery('#cronic_disease_desc_div').attr('style','display:block; !important');
+    }
+  });
+  
+.field
+  = f.input :name
+.field
+  .dates
+    = f.input :dob, :as => :date, :order => [:day, :month, :year], :start_year => 1920, :end_year => Date.today.year 
+.field
+  = f.label :nationality
+  = f.text_field :nationality
+.field
+  = f.label :naturally
+  = f.text_field :naturally
+.field
+  = f.input :associated_id, :as => :select, :collection => [], :prompt => t('select')
+.field
+  .dates
+    = f.input :start_date, :as => :date, :order => [:day, :month, :year], :start_year => 1920, :end_year => Date.today.year 
+.field
+  = f.input :civil_status, :as => :select, :collection => Profile::CIVIL_STATUS, :prompt => t('select')
+.field
+  = f.label :cpf
+  = f.text_field :cpf
+.field
+  = f.label :rg
+  = f.text_field :rg
+.field
+  = f.label :cep
+  = f.text_field :cep
+.field
+  = f.label :street
+  = f.text_field :street
+.field
+  = f.label :address_number
+  = f.text_field :address_number
+.field
+  = f.label :district
+  = f.text_field :district
+.field
+  = f.label :city
+  = f.text_field :city
+.field
+  = f.input :state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+.field
+  = f.label :company_phone_number
+  = f.text_field :company_phone_number
+.field
+  = f.label :phone
+  = f.text_field :phone
+.field
+  = f.label :mobile
+  = f.text_field :mobile
+.field
+  = f.label :unifreire_id
+  = f.text_field :unifreire_id
+.field
+  = f.label :twitter
+  = f.text_field :twitter
+.field
+  = f.label :facebook
+  = f.text_field :facebook
+.field
+  = f.label :another_social_networks
+  = f.text_area :another_social_networks, :rows => 5, :cols => 100
+.field
+  = f.label :curriculum_lattes
+  = f.text_area :curriculum_lattes, :rows => 10, :cols => 100
+.field
+  = f.input :curriculum, :as => :file
+.field
+  = f.input :smoker, :as => :radio, :collection => [t('yyes'), t('nno')]
+.field
+  = f.input :has_disability, :as => :radio, :collection => [t('yyes'), t('nno')]
+  :javascript
+    $(document).ready(function() {
+        $("#profile_has_disability_sim").change(function() {
+            if ($("#profile_has_disability_sim").is(':checked')){
+              jQuery('#disability_desc_div').attr('style','display:block; !important');
+              jQuery('#profile_disability_desc').focus();
+            }
+            else{
+              jQuery('#disability_desc_div').attr('style','display:none; !important');
+            }
+        });
+        $("#profile_has_disability_não").change(function() {
+            if ($("#profile_has_disability_não").is(':checked')){
+              jQuery('#disability_desc_div').attr('style','display:none; !important');
+            }
+        });
+    });
+#disability_desc_div.hidden
+  .field
+    = f.label :disability_desc
+    = f.text_field :disability_desc
+
+.field
+  = f.input :take_medicenes, :as => :radio, :collection => [t('yyes'), t('nno')]
+  :javascript
+    $(document).ready(function() {
+        $("#profile_take_medicenes_sim").change(function() {
+            if ($("#profile_take_medicenes_sim").is(':checked')){
+              jQuery('#medicenes_desc_div').attr('style','display:block; !important');
+              jQuery('#profile_medicenes_desc').focus();
+            }
+            else{
+              jQuery('#medicenes_desc_div').attr('style','display:none; !important');
+            }
+        });
+        $("#profile_take_medicenes_não").change(function() {
+            if ($("#profile_take_medicenes_não").is(':checked')){
+              jQuery('#medicenes_desc_div').attr('style','display:none; !important');
+            }
+        });
+    });
+#medicenes_desc_div.hidden
+  .field
+    = f.label :medicenes_desc
+    = f.text_area :medicenes_desc, :rows => 5, :cols => 100
+
+.field
+  = f.input :allergic, :as => :radio, :collection => [t('yyes'), t('nno')]
+  :javascript
+    $(document).ready(function() {
+        $("#profile_allergic_sim").change(function() {
+            if ($("#profile_allergic_sim").is(':checked')){
+              jQuery('#allergic_desc_div').attr('style','display:block; !important');
+              jQuery('#profile_allergic_desc').focus();
+            }
+            else{
+              jQuery('#allergic_desc_div').attr('style','display:none; !important');
+            }
+        });
+        $("#profile_allergic_não").change(function() {
+            if ($("#profile_allergic_não").is(':checked')){
+              jQuery('#allergic_desc_div').attr('style','display:none; !important');
+            }
+        });
+    });
+#allergic_desc_div.hidden
+  .field
+    = f.label :allergic_desc
+    = f.text_area :allergic_desc, :rows => 5, :cols => 100
+
+.field
+  = f.input :blood_type, :as => :select, :collection => Profile::BLOOD_TYPES, :prompt => t('select')
+.field
+  = f.input :cronic_disease, :as => :radio, :collection => [t('yyes'), t('nno')]
+  :javascript
+    $(document).ready(function() {
+        $("#profile_cronic_disease_sim").change(function() {
+            if ($("#profile_cronic_disease_sim").is(':checked')){
+              jQuery('#cronic_disease_desc_div').attr('style','display:block; !important');
+              jQuery('#profile_cronic_disease_desc').focus();
+            }
+            else{
+              jQuery('#cronic_disease_desc_div').attr('style','display:none; !important');
+            }
+        });
+        $("#profile_cronic_disease_não").change(function() {
+            if ($("#profile_cronic_disease_não").is(':checked')){
+              jQuery('#cronic_disease_desc_div').attr('style','display:none; !important');
+            }
+        });
+    });
+#cronic_disease_desc_div.hidden
+  .field
+    = f.label :cronic_disease_desc
+    = f.text_area :cronic_disease_desc, :rows => 5, :cols => 100
+
+%div{:style => " clear: both; float: left; font-style: italic; margin-bottom: 20px;"}
+  %b Em caso de necessidade/urgência, quem deve ser contatado
+
+%br
+- f.fields_for :emergency_contacts do |builder|
+  = render "emergency_contact_fields", :f => builder
+%br
+= link_to_add_fields t('profile.new_emergency_contact'), f, :emergency_contacts
+%br

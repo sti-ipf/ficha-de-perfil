@@ -1,0 +1,31 @@
+:javascript
+  $(document).ready(function() {
+    if ($("#profile_activity_in_social_moviments_sim").is(':checked')){
+      jQuery('#social_moviments_detail').attr('style','display:block; !important');
+    }
+  });
+.field
+  = f.input :activity_in_social_moviments, :as => :radio, :collection => [t('yyes'), t('nno')]
+  :javascript
+    $(document).ready(function() {
+        $("#profile_activity_in_social_moviments_sim").change(function() {
+            if ($("#profile_activity_in_social_moviments_sim").is(':checked')){
+              jQuery('#social_moviments_detail').attr('style','display:block; !important');
+            }
+            else{
+              jQuery('#social_moviments_detail').attr('style','display:none; !important');
+            }
+        });
+        $("#profile_activity_in_social_moviments_não").change(function() {
+            if ($("#profile_activity_in_social_moviments_não").is(':checked')){
+              jQuery('#social_moviments_detail').attr('style','display:none; !important');
+            }
+        });
+    });
+#social_moviments_detail.hidden
+  %br
+  - f.fields_for :social_moviments do |builder|
+    = render "social_moviment_fields", :f => builder
+  %br
+  = link_to_add_fields t('profile.new_social_moviment'), f, :social_moviments
+  %br

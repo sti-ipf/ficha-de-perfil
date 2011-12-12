@@ -1,0 +1,391 @@
+pt:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+  logout: "Sair"
+  edit: "Editar"
+  create: "Criar"
+  delete: "Apagar"
+  remove: "Remover"
+  please_wait: "Aguarde..."
+  select: "Selecione"
+  search: "Buscar"
+  previous: "Anterior"
+  next: "Próxima"
+  update: "Atualizar"
+  back: "Voltar"
+  save: "Salvar"
+  access_denied: "Acesso negado"
+  show: "Visualizar"
+  destroy: "Apagar"
+  other: "Outro"
+  are_you_sure: "Você tem certeza?"
+  nno: "Não"
+  yyes: "Sim"
+  finish: "Finalizar"
+  profile:
+    new_form: "Cadastro de perfil"
+    edit_form: "Alteração de perfil"
+    new_emergency_contact: "Novo contato"
+    new_social_moviment: "Novo movimento social"
+    new_public_school: "Nova escola"
+  paperclip:
+    errors:
+      attachment:
+        size: "Tamanho do arquivo inválido"
+        content_type: "Conteúdo não suportado"
+        presence: "Não pode ficar em branco"
+  activerecord:
+    models:
+      profile: "Perfil"
+      emergency_contact: "Contato"
+      language: "Idioma"
+      social_moviment: "Movimento social"
+    attributes:
+      profile: 
+        id: "Número"
+        name: "Nome completo"
+        dob: "Data de nascimento"
+        nationality: "Nacionalidade"
+        naturally: "Naturalidade"
+        associated_id: "Instituição mantida, área, setor, projeto a que está vinculado"
+        start_date: "Data do início do trabalho no IPF"
+        civil_status: "Estado civil"
+        cpf: "CPF"
+        rg: "RG"
+        cep: "CEP"
+        street: "Rua"
+        address_number: "Nº"
+        district: "Bairro"
+        city: "Cidade"
+        state: "Estado"
+        company_phone_number: "Telefone/Celular institucional"
+        phone: "Telefone residencial"
+        mobile: "Celular"
+        unifreire_id: "Rede Social da UniFreire"
+        twitter: "Twitter"
+        facebook: "Facebook"
+        another_social_networks: "Outras redes sociais"
+        curriculum_lattes: "Currículo Lattes"
+        smoker: "É tabagista?"
+        has_disability: "Possui alguma deficiência?"
+        disability_desc: "Qual?"
+        take_medicenes: "Toma remédios regularmente? "
+        medicenes_desc: "Quais?"
+        allergic: "É alérgico?"
+        allergic_desc: "Qual?"
+        blood_type: "Tipo Sanguíneo"
+        cronic_disease: "Possui doença crônica?"
+        cronic_disease_desc: "Qual?"
+        last_vacation: "Data das últimas férias"
+        next_vacation: "Previsão de férias"
+        deslocation_time_by_google: "Tempo de deslocamento da casa ao Instituto, segundo o GoogleMaps"
+        deslocation_time: "Qual tempo de deslocamento de sua casa ao Instituto, a partir de seu percurso"
+        dependents: "Você possui dependentes familiares? "
+        formation: "Nível de Ensino"
+        created_at: "Perfil criado em"
+        updated_at: "Perfil atualizado em"
+        author_coauthor: "Escreveu ou foi co-autor de livros?"
+        books: "Quais?"
+        text_editor_level: "Editores de texto (ex: LibreOffice.org Writer)"
+        spreadsheet_editor_level: "Planilhas eletrônicas (ex: LibreOffice.org Calc)"
+        presentation_editor_level: "Apresentações de slides (ex: LibreOffice.org Impress)"
+        browser_level: "Navegadores Web (ex: Mozilla Firefox)"
+        email_level: "Gerenciadores de correio eletrônico (ex: Mozilla Thunderbird)"
+        os_level: "Sistemas operacionais GNU/Linux (ex: Ubuntu)"
+        vetorial_image_editor_level: "Editores de imagem vetorial (ex: LibreOffice.org Draw, Inkscape)"
+        photo_editor_level: "Editores de foto (ex: Gimp)"
+        media_player_level: "Reprodutores de som (ex: Amarok)"
+        worked_in_public_school: "Trabalhou em escola pública?"
+        work_in_another_institution: "Participa/trabalha/desenvolve atividades/realiza assessoria para alguma outra instituição?"
+        another_institution_name: "Nome"
+        another_institution_contact: "Contato"
+        another_institution_site: "Site da Instituição"
+        partner_in_another_company: "É sócio ou possui alguma empresa? "
+        another_company_name: "Nome"
+        another_company_contact: "Contato"
+        another_company_site: "Site da Instituição"
+        ensino_fundamental_type: "Cursou ensino fundamental?"
+        ensino_fundamental_school_name: "Nome da escola"
+        ensino_fundamental_school_city: "Cidade"
+        ensino_fundamental_school_state: "Estado"
+        ensino_fundamental_school_country: "País"
+        ensino_medio_type: "Cursou ensino médio?"
+        ensino_medio_school_name: "Nome da escola"
+        ensino_medio_school_city: "Cidade"
+        ensino_medio_school_state: "Estado"
+        ensino_medio_school_country: "País"
+        ensino_superior_type: "Cursou ensino superior?"
+        ensino_superior_school_name: "Nome da instituição"
+        ensino_superior_school_course: "Curso"
+        ensino_superior_school_status: "Situação do curso"
+        ensino_superior_school_period: "Período de realização"
+        ensino_superior_school_city: "Cidade"
+        ensino_superior_school_state: "Estado"
+        ensino_superior_school_country: "País"
+        specialization_course_type: "Realizou curso de especialização? "
+        specialization_school_name: "Nome da instituição"
+        specialization_course_status: "Situação do curso"
+        specialization_period: "Período de realização"
+        specialization_monograph: "Título da monografia"
+        specialization_monograph_area: "Área da monografia"
+        specialization_monograph_url: "Endereço virtual da monografia, se disponível"
+        specialization_school_city: "Cidade"
+        specialization_school_state: "Estado"
+        specialization_school_country: "País"
+        master_degree_school_type: "Realizou mestrado?"
+        master_degree_school_name: "Nome da instituição"
+        master_degree_area: "Área"
+        master_degree_status: "Situação do curso"
+        master_degree_period: "Período de realização"
+        master_degree_dissertation_area: "Área da dissertação"
+        master_degree_dissertation_name: "Título da dissertação"
+        master_degree_dissertation_url: "Endereço virtual da dissertação, se disponível"
+        master_degree_school_city: "Cidade"
+        master_degree_school_state: "Estado"
+        master_degree_school_country: "País"
+        doctoral_school_type: "Realizou doutorado?"
+        doctoral_school_name: "Nome da instituição"
+        doctoral_area: "Área"
+        doctoral_status: "Situação do curso"
+        doctoral_period: "Período de realização"
+        doctoral_dissertation_area: "Área da tese"
+        doctoral_dissertation_name: "Título da tese"
+        doctoral_dissertation_url: "Endereço virtual da tese, se disponível"
+        doctoral_school_city: "Cidade"
+        doctoral_school_state: "Estado"
+        doctoral_school_country: "País"
+        postdoctoral_school_type: "Realizou pós-doutorado?"
+        postdoctoral_school_name: "Nome da instituição"
+        postdoctoral_area: "Área"
+        postdoctoral_status: "Situação do curso"
+        postdoctoral_period: "Período de realização"
+        postdoctoral_dissertation_area: "Área do pós-doutorado"
+        postdoctoral_dissertation_name: "Título do pós-doutorado"
+        postdoctoral_dissertation_url: "Endereço virtual do pós-doutorado, se disponível"
+        postdoctoral_school_city: "Cidade"
+        postdoctoral_school_state: "Estado"
+        postdoctoral_school_country: "País"
+        livre_docencia_type: "Realizou livre docência?"
+        livre_docencia_school_name: "Nome da instituição"
+        livre_docencia_area: "Área"
+        livre_docencia_status: "Situação do curso"
+        livre_docencia_period: "Período de realização"
+        livre_docencia_dissertation_area: "Área da livre docência"
+        livre_docencia_dissertation_name: "Título da livre docência"
+        livre_docencia_dissertation_url: "Endereço virtual da livre docência, se disponível"
+        livre_docencia_school_city: "Cidade"
+        livre_docencia_school_state: "Estado"
+        livre_docencia_school_country: "País"
+        abilities: "Habilidades"
+        interesting_topics: "Temas de interesse (para leitura/debates/seminários/produção de textos)"
+        work_topics: "Temas sobre os quais fala/escreve/dá palestras"
+        activity_in_social_moviments: "Participa de algum movimento social/luta por alguma causa?"
+        curriculum: "Curriculum"
+        curriculum_content_type: "Tipo de arquivo"
+        curriculum_file_name: "Arquivo"
+      emergency_contact:
+        id: "Número"
+        profile_id: "Perfil"
+        name: "Nome"
+        relationship: "Parentesco"
+        contact: "Contato"
+        phone: "Telefone residencial"
+        mobile: "Telefone celular"
+        email: "E-mail"
+      language:
+        fluent: "fala com fluência"
+        conversation: "consegue se comunicar"
+        read: "lê"
+        write: "escreve"
+      social_moviment:
+        id: "Número"
+        name: "Nome do movimento"
+        has_headquarters: "Possui sede física?"
+        address: "Endereço"
+        responsible: "Responsável"
+        phone: "Telefone"
+        email: "E-mail"
+        site: "Site"
+        moviment_type: "Tipo de movimento"
+        profile_id: "Perfil"
+      public_school:
+        id: "Número"
+        name: "Nome da escola"
+        address: "Endereço"
+        city: "Cidade"
+        state: "Estado"
+        country: "País"
+        role: "Cargo"
+        period: "Período"
+    errors:
+      template:
+        header:
+          one: "Não foi possível gravar %{model}: 1 erro"
+          other: "Não foi possível gravar %{model}: %{count} erros."
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+      messages:
+        required: "obrigatório"
+        is_required: "obrigatório"
+        isrequired: "obrigatório"
+        inclusion: "não está incluído na lista"
+        exclusion: "não está disponível"
+        invalid: "não é válido"
+        confirmation: "não está de acordo com a confirmação"
+        accepted: "deve ser aceito"
+        empty: "não pode ficar vazio"
+        blank: "não pode ficar em branco"
+        too_long: "é muito longo (máximo: %{count} caracteres)"
+        too_short: "é muito curto (mínimo: %{count} caracteres)"
+        wrong_length: "não possui o tamanho esperado (%{count} caracteres)"
+        taken: "já está em uso"
+        not_a_number: "não é um número"
+        not_an_integer: "não é um número inteiro"
+        greater_than: "deve ser maior do que %{count}"
+        greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+        equal_to: "deve ser igual a %{count}"
+        less_than: "deve ser menor do que %{count}"
+        less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+        odd: "deve ser ímpar"
+        even: "deve ser par"
+        record_invalid: "A validação falhou: %{errors}"
+        not_positive: "não é um número positivo"
+        not_negative: "não é um número negativo"
+  # formatos de data e hora
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+
+  time:
+    formats:
+      default: "%A, %d de %B de %Y, %H:%M h"
+      short: "%d/%m, %H:%M h"
+      long: "%A, %d de %B de %Y, %H:%M h"
+    am: ''
+    pm: ''
+
+  # distancia do tempo em palavras
+  datetime:
+    distance_in_words:
+      half_a_minute: 'meio minuto'
+      less_than_x_seconds:
+        one: 'menos de 1 segundo'
+        other: 'menos de %{count} segundos'
+
+      x_seconds:
+        one: '1 segundo'
+        other: '%{count} segundos'
+
+      less_than_x_minutes:
+        one: 'menos de um minuto'
+        other: 'menos de %{count} minutos'
+
+      x_minutes:
+        one: '1 minuto'
+        other: '%{count} minutos'
+
+      about_x_hours:
+        one: '1 hora'
+        other: '%{count} horas'
+
+      x_days:
+        one: '1 dia'
+        other: '%{count} dias'
+
+      about_x_months:
+        one: '1 mês'
+        other: '%{count} meses'
+
+      x_months:
+        one: '1 mês'
+        other: '%{count} meses'
+
+      about_x_years:
+        one: '1 ano'
+        other: '%{count} anos'
+
+      over_x_years:
+        one: 'mais de 1 ano'
+        other: 'mais de %{count} anos'
+
+      almost_x_years:
+        one: 'quase 1 ano'
+        other: 'quase %{count} anos'
+
+    prompts:
+      year: "Ano"
+      month: "Mês"
+      day: "Dia"
+      hour: "Hora"
+      minute: "Minuto"
+      second: "Segundos"
+
+  # numeros
+  number:
+    format:
+      precision: 3
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: 'R$'
+        precision: 2
+        format: '%u %n'
+        separator: ','
+        delimiter: '.'
+    percentage:
+      format:
+        delimiter: '.'
+    precision:
+      format:
+        delimiter: '.'
+    human:
+      format:
+        precision: 2
+        delimiter: '.'
+        significant: true
+        strip_unsignificant_zeros: true
+      # number_to_human_size()
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      # number_to_human()
+      # new in rails 3: please add to other locales
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "mil"
+          million:
+            one: milhão
+            other: milhões
+          billion:
+            one: bilhão
+            other: bilhões
+          trillion:
+            one: trilhão
+            other: trilhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+
+  # Usado no Array.to_sentence
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: " e "

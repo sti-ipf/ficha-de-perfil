@@ -1,0 +1,16 @@
+.white-box
+  %h1 Perfis cadastrados
+  .actions
+    = link_to 'Cadastrar', new_profile_path
+  .profiles_list
+    - @profiles.each do |profile|
+      .profile_card
+        .list_avatar
+          = link_to '', profile, :style => "background-image: url('images/no-face.jpg')", :class => 'card'
+          = link_to profile.name, profile
+        .actions_links
+          = link_to t('edit'), edit_profile_path(profile)
+          = link_to t('destroy'), profile, :confirm => t('are_you_sure'), :method => :delete
+
+  %br
+  .clearfix  

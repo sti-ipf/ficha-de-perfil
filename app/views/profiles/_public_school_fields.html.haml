@@ -1,0 +1,19 @@
+.fields
+  .field
+    = f.input :name, :as => :string
+  .field
+    = f.input :address, :as => :string
+  .field
+    = f.input :city, :as => :string
+  .field
+    = f.input :state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  .field
+    = f.input :role, :as => :string
+  .field
+    = f.input :period, :as => :string
+    
+  %br
+  = link_to_remove_fields t('remove'), f
+  %br

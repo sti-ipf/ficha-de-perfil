@@ -1,0 +1,236 @@
+:javascript
+  $(document).ready(function() {
+    if ($("#profile_formation").val() > 6){
+      jQuery('#formation_detail').attr('style','display:block; !important');
+    }
+    if ($("#profile_author_coauthor_sim").is(':checked')){
+      jQuery('#profile_books_div').attr('style','display:block; !important');
+    }
+
+  });
+  
+.field
+  = f.input :formation, :as => :select, :collection => Profile::FORMATION_LEVELS, :prompt => t('select')
+  :javascript
+    $(document).ready(function() {
+        $("#profile_formation").change(function() {
+            var value = $(this).val();
+            if (value > 6){
+              jQuery('#formation_detail').attr('style','display:block; !important');
+            }
+            else{
+              jQuery('#formation_detail').attr('style','display:none; !important');
+            }
+        });
+    });
+#formation_detail.hidden
+  .field
+    = f.input :ensino_fundamental_type, :as => :select, :collection => Profile::SCHOOL_TYPES, :prompt => t('select')
+  .field
+    = f.label :ensino_fundamental_school_name
+    = f.text_field :ensino_fundamental_school_name
+  .field
+    = f.label :ensino_fundamental_school_city
+    = f.text_field :ensino_fundamental_school_city
+  .field
+    = f.input :ensino_fundamental_school_state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :ensino_fundamental_school_country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  .field
+    = f.input :ensino_medio_type, :as => :select, :collection => Profile::SCHOOL_TYPES, :prompt => t('select')
+  .field
+    = f.label :ensino_medio_school_name
+    = f.text_field :ensino_medio_school_name
+  .field
+    = f.label :ensino_medio_school_city
+    = f.text_field :ensino_medio_school_city
+  .field
+    = f.input :ensino_medio_school_state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :ensino_medio_school_country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  .field
+    = f.input :ensino_superior_type, :as => :select, :collection => Profile::UNIVERSITY_TYPES, :prompt => t('select')
+  .field
+    = f.label :ensino_superior_school_name
+    = f.text_field :ensino_superior_school_name
+  .field
+    = f.label :ensino_superior_school_course
+    = f.text_field :ensino_superior_school_course
+  .field
+    = f.input :ensino_superior_school_status, :as => :select, :collection => Profile::COURSE_STATUS, :prompt => t('select')
+  .field
+    = f.input :ensino_superior_school_period, :as => :select, :collection => Profile::COURSE_PERIODS, :prompt => t('select')
+  .field
+    = f.label :ensino_superior_school_city
+    = f.text_field :ensino_superior_school_city
+  .field
+    = f.input :ensino_superior_school_state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :ensino_superior_school_country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  .field
+    = f.input :specialization_course_type, :as => :select, :collection => Profile::UNIVERSITY_TYPES, :prompt => t('select')
+  .field
+    = f.label :specialization_school_name
+    = f.text_field :specialization_school_name
+  .field
+    = f.input :specialization_course_status, :as => :select, :collection => Profile::COURSE_STATUS, :prompt => t('select')
+  .field
+    = f.input :specialization_period, :as => :select, :collection => Profile::COURSE_PERIODS, :prompt => t('select')
+  .field
+    = f.label :specialization_monograph
+    = f.text_area :specialization_monograph, :rows => 5, :cols => 100
+  .field
+    = f.label :specialization_monograph_area
+    = f.text_field :specialization_monograph_area
+  .field
+    = f.label :specialization_monograph_url
+    = f.text_field :specialization_monograph_url
+  .field
+    = f.label :specialization_school_city
+    = f.text_field :specialization_school_city
+  .field
+    = f.input :specialization_school_state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :specialization_school_country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  .field
+    = f.input :master_degree_school_type, :as => :select, :collection => Profile::UNIVERSITY_TYPES, :prompt => t('select')
+  .field
+    = f.label :master_degree_school_name
+    = f.text_field :master_degree_school_name
+  .field
+    = f.label :master_degree_area
+    = f.text_field :master_degree_area
+  .field
+    = f.input :master_degree_status, :as => :select, :collection => Profile::COURSE_STATUS, :prompt => t('select')
+  .field
+    = f.input :master_degree_period, :as => :select, :collection => Profile::COURSE_PERIODS, :prompt => t('select')
+  .field
+    = f.label :master_degree_dissertation_area
+    = f.text_field :master_degree_dissertation_area
+  .field
+    = f.label :master_degree_dissertation_name
+    = f.text_area :master_degree_dissertation_name, :rows => 5, :cols => 100
+  .field
+    = f.label :master_degree_dissertation_url
+    = f.text_field :master_degree_dissertation_url
+  .field
+    = f.label :master_degree_school_city
+    = f.text_field :master_degree_school_city
+  .field
+    = f.input :master_degree_school_state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :master_degree_school_country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  .field
+    = f.input :doctoral_school_type, :as => :select, :collection => Profile::UNIVERSITY_TYPES, :prompt => t('select')
+  .field
+    = f.label :doctoral_school_name
+    = f.text_field :doctoral_school_name
+  .field
+    = f.label :doctoral_area
+    = f.text_field :doctoral_area
+  .field
+    = f.input :doctoral_status, :as => :select, :collection => Profile::COURSE_STATUS, :prompt => t('select')
+  .field
+    = f.input :doctoral_period, :as => :select, :collection => Profile::COURSE_PERIODS, :prompt => t('select')
+  .field
+    = f.label :doctoral_dissertation_area
+    = f.text_field :doctoral_dissertation_area
+  .field
+    = f.label :doctoral_dissertation_name
+    = f.text_area :doctoral_dissertation_name, :rows => 5, :cols => 100
+  .field
+    = f.label :doctoral_dissertation_url
+    = f.text_field :doctoral_dissertation_url
+  .field
+    = f.label :doctoral_school_city
+    = f.text_field :doctoral_school_city
+  .field
+    = f.input :doctoral_school_state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :doctoral_school_country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  .field
+    = f.input :postdoctoral_school_type, :as => :select, :collection => Profile::UNIVERSITY_TYPES, :prompt => t('select')
+  .field
+    = f.label :postdoctoral_school_name
+    = f.text_field :postdoctoral_school_name
+  .field
+    = f.label :postdoctoral_area
+    = f.text_field :postdoctoral_area
+  .field
+    = f.input :postdoctoral_status, :as => :select, :collection => Profile::COURSE_STATUS, :prompt => t('select')
+  .field
+    = f.input :postdoctoral_period, :as => :select, :collection => Profile::COURSE_PERIODS, :prompt => t('select')
+  .field
+    = f.label :postdoctoral_dissertation_area
+    = f.text_field :postdoctoral_dissertation_area
+  .field
+    = f.label :postdoctoral_dissertation_name
+    = f.text_area :postdoctoral_dissertation_name, :rows => 5, :cols => 100
+  .field
+    = f.label :postdoctoral_dissertation_url
+    = f.text_field :postdoctoral_dissertation_url
+  .field
+    = f.label :postdoctoral_school_city
+    = f.text_field :postdoctoral_school_city
+  .field
+    = f.input :postdoctoral_school_state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :postdoctoral_school_country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  .field
+    = f.input :livre_docencia_type, :as => :select, :collection => Profile::UNIVERSITY_TYPES, :prompt => t('select')
+  .field
+    = f.label :livre_docencia_school_name
+    = f.text_field :livre_docencia_school_name
+  .field
+    = f.label :livre_docencia_area
+    = f.text_field :livre_docencia_area
+  .field
+    = f.input :livre_docencia_status, :as => :select, :collection => Profile::COURSE_STATUS, :prompt => t('select')
+  .field
+    = f.input :livre_docencia_period, :as => :select, :collection => Profile::COURSE_PERIODS, :prompt => t('select')
+  .field
+    = f.label :livre_docencia_dissertation_area
+    = f.text_field :livre_docencia_dissertation_area
+  .field
+    = f.label :livre_docencia_dissertation_name
+    = f.text_area :livre_docencia_dissertation_name, :rows => 5, :cols => 100
+  .field
+    = f.label :livre_docencia_dissertation_url
+    = f.text_field :livre_docencia_dissertation_url
+  .field
+    = f.label :livre_docencia_school_city
+    = f.text_field :livre_docencia_school_city
+  .field
+    = f.input :livre_docencia_school_state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
+  .field
+    = f.input :livre_docencia_school_country, :as => :select, :collection => Profile::COUNTRIES, :prompt => t('select')
+  
+
+.field
+  = f.input :interesting_topics, :as => :check_boxes, :collection => @interesting_topics
+.field
+  = f.input :work_topics, :as => :check_boxes, :collection => @work_topics    
+  
+.field
+  = f.input :author_coauthor, :as => :radio, :collection => [t('yyes'), t('nno')]
+  :javascript
+    $(document).ready(function() {
+        $("#profile_author_coauthor_sim").change(function() {
+            if ($("#profile_author_coauthor_sim").is(':checked')){
+              jQuery('#profile_books_div').attr('style','display:block; !important');
+              jQuery('#profile_books').focus();
+            }
+            else{
+              jQuery('#profile_books_div').attr('style','display:none; !important');
+            }
+        });
+        $("#profile_author_coauthor_não").change(function() {
+            if ($("#profile_author_coauthor_não").is(':checked')){
+              jQuery('#profile_books_div').attr('style','display:none; !important');
+            }
+        });
+    });
+#profile_books_div.hidden
+  .field
+    = f.label :books
+    = f.text_area :books, :rows => 5, :cols => 100

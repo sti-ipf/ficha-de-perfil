@@ -1,0 +1,55 @@
+= semantic_form_for @profile, :html => { :multipart => true} do |f|
+  #errors_div
+    -if @profile.errors.any?
+      #error_explanation
+        %ul
+          - @profile.errors.full_messages.each do |msg|
+            %li= msg
+
+  
+  .white-box
+    %h4 Dimensão: Pessoal
+    = render 'personal_dimension', :f => f
+    .clearfix
+  .space_between_boxes
+  .white-box
+    %h4 Dimensão: Institucional
+    = render 'institutional_dimension', :f => f
+    .clearfix
+  .space_between_boxes
+  .white-box
+    %h4 Dimensão: Habilidades
+    = render 'ability_dimension', :f => f
+    .clearfix
+  .space_between_boxes
+  .white-box
+    %h4 Dimensão: Formação
+    = render 'formation_dimension', :f => f
+    .clearfix
+  .space_between_boxes
+  .white-box
+    %h4 Conhecimentos de Informática
+    = render 'computer_knowledge', :f => f
+    .clearfix
+  .space_between_boxes
+  .white-box
+    %h4 Conhecimentos de língua estrangeira
+    = render 'foreign_languages', :f => f
+    .clearfix
+  .space_between_boxes
+  .white-box
+    %h4 Dimensão: Movimentos Sociais
+    = render 'social_moviment_dimension', :f => f
+    .clearfix
+  .space_between_boxes
+  .white-box
+    %h4 Dimensão: Profissional
+    = render 'professional_dimension', :f => f
+    .fixed_buttons
+      = link_to t('back'), profiles_path, :class => 'back_link fixed_button'
+      .actions  
+        = f.submit button, :class => 'fixed_button'
+    #success_message
+      Salvo com sucesso!
+       
+    .clearfix

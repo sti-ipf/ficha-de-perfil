@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Perfil
+    = stylesheet_link_tag :all
+    - js_files = ['jquery.min.js', 'jquery_ujs.js', 'jquery-rails.js', 'application.js']
+    - js_files.each do |js_file|
+      = javascript_include_tag js_file
+    = csrf_meta_tag
+  %body
+    .header
+      .menu
+        = link_to 'Perfis', profiles_path
+      .logo
+        = image_tag 'logo.png'
+    .wrapper
+      = yield

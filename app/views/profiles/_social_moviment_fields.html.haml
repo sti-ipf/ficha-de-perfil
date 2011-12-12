@@ -1,0 +1,20 @@
+.fields
+  .field
+    = f.input :name, :as => :string
+  .field
+    = f.label :address
+    = f.text_area :address, :rows => 5, :cols => 100
+  .field
+    = f.input :responsible, :as => :string
+  .field
+    = f.input :phone, :as => :string
+  .field
+    = f.input :email, :as => :string
+  .field
+    = f.input :site, :as => :string
+  .field
+    = f.input :moviment_type, :as => :select, :collection => SocialMoviment::TYPES, :prompt => t('select')
+    
+  %br
+  = link_to_remove_fields t('remove'), f
+  %br

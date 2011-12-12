@@ -1,0 +1,12 @@
+- if @profile.errors.any?
+  - @profile.errors.full_messages.each do |error| 
+    var errors = $("<div id='error_explanation'><ul>");
+    errors.append('<li>#{escape_javascript( error )}</li>');
+    errors.append('</ul></div>')
+    $('#error_explanation').remove();
+    $(errors).insertAfter('#errors_div')
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+- else
+  $("#success_message").fadeIn(5000);
+  $("#success_message").fadeOut(2000, 'linear');
