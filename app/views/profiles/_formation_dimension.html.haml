@@ -3,7 +3,7 @@
     if ($("#profile_formation").val() > 6){
       jQuery('#formation_detail').attr('style','display:block; !important');
     }
-    if ($("#profile_author_coauthor_sim").is(':checked')){
+    if ($("#profile_author_coauthor_true").is(':checked')){
       jQuery('#profile_books_div').attr('style','display:block; !important');
     }
 
@@ -212,11 +212,11 @@
   = f.input :work_topics, :as => :check_boxes, :collection => @work_topics    
   
 .field
-  = f.input :author_coauthor, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :author_coauthor, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.author_coauthor
   :javascript
     $(document).ready(function() {
-        $("#profile_author_coauthor_sim").change(function() {
-            if ($("#profile_author_coauthor_sim").is(':checked')){
+        $("#profile_author_coauthor_true").change(function() {
+            if ($("#profile_author_coauthor_true").is(':checked')){
               jQuery('#profile_books_div').attr('style','display:block; !important');
               jQuery('#profile_books').focus();
             }
@@ -224,8 +224,8 @@
               jQuery('#profile_books_div').attr('style','display:none; !important');
             }
         });
-        $("#profile_author_coauthor_não").change(function() {
-            if ($("#profile_author_coauthor_não").is(':checked')){
+        $("#profile_author_coauthor_false").change(function() {
+            if ($("#profile_author_coauthor_false").is(':checked')){
               jQuery('#profile_books_div').attr('style','display:none; !important');
             }
         });

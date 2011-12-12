@@ -23,6 +23,7 @@ class Profile < ActiveRecord::Base
   has_many :social_moviments
   has_many :public_schools
   has_attached_file :curriculum
+  has_attached_file :avatar
 
   accepts_nested_attributes_for :emergency_contacts, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :languages, :reject_if => lambda { |a| a[:level].blank? }, :allow_destroy => true

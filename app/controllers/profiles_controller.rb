@@ -37,6 +37,8 @@ class ProfilesController < ApplicationController
       @profile.languages.build(:foreign_language_id => l.id)
       @languages_array << l.language
     end
+
+    @projects = [['Comunicação', 1], ['Tecnologia da Informação', 2], ['Educação à Distância', 3], ['Gestão de Projetos', 4], ['Educação Cidadã', 5], ['Educação Popular', 6], ['Educação de Jovens e Adultos', 7], ['UniFreire', 8], ['Centro de Referência Paulo Freire', 9], ['Editora e Livraria Instituto Paulo Freire', 10], ['Casa da Cidadania Planetária', 11]]
   
     respond_to do |format|
       format.html # new.html.erb
@@ -47,6 +49,18 @@ class ProfilesController < ApplicationController
   # GET /profiles/1/edit
   def edit
     @profile = Profile.find(params[:id])
+    
+    @abilities = Ability.all.collect{|a| [a.name, a.id]}
+    @interesting_topics = InterestingTopic.all.collect{|a| [a.name, a.id]}
+    @work_topics = WorkTopic.all.collect{|a| [a.name, a.id]}
+    @foreign_languages = ForeignLanguage.all
+    @languages_array = []
+    
+    @foreign_languages.each do |l|
+      @profile.languages.build(:foreign_language_id => l.id)
+      @languages_array << l.language if !@profile.languages.collect(&:foreign_language_id).include? (l.id)
+    end
+    @projects = [['Comunicação', 1], ['Tecnologia da Informação', 2], ['Educação à Distância', 3], ['Gestão de Projetos', 4], ['Educação Cidadã', 5], ['Educação Popular', 6], ['Educação de Jovens e Adultos', 7], ['UniFreire', 8], ['Centro de Referência Paulo Freire', 9], ['Editora e Livraria Instituto Paulo Freire', 10], ['Casa da Cidadania Planetária', 11]]
   end
 
   # POST /profiles

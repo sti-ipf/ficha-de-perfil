@@ -1,23 +1,23 @@
 :javascript
   $(document).ready(function() {
-    if ($("#profile_activity_in_social_moviments_sim").is(':checked')){
+    if ($("#profile_activity_in_social_moviments_true").is(':checked')){
       jQuery('#social_moviments_detail').attr('style','display:block; !important');
     }
   });
 .field
-  = f.input :activity_in_social_moviments, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :activity_in_social_moviments, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.activity_in_social_moviments
   :javascript
     $(document).ready(function() {
-        $("#profile_activity_in_social_moviments_sim").change(function() {
-            if ($("#profile_activity_in_social_moviments_sim").is(':checked')){
+        $("#profile_activity_in_social_moviments_true").change(function() {
+            if ($("#profile_activity_in_social_moviments_true").is(':checked')){
               jQuery('#social_moviments_detail').attr('style','display:block; !important');
             }
             else{
               jQuery('#social_moviments_detail').attr('style','display:none; !important');
             }
         });
-        $("#profile_activity_in_social_moviments_não").change(function() {
-            if ($("#profile_activity_in_social_moviments_não").is(':checked')){
+        $("#profile_activity_in_social_moviments_false").change(function() {
+            if ($("#profile_activity_in_social_moviments_false").is(':checked')){
               jQuery('#social_moviments_detail').attr('style','display:none; !important');
             }
         });

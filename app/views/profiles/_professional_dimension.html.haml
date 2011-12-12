@@ -1,29 +1,29 @@
 :javascript
   $(document).ready(function() {
-    if ($("#profile_worked_in_public_school_sim").is(':checked')){
+    if ($("#profile_worked_in_public_school_true").is(':checked')){
       jQuery('#public_school_detail').attr('style','display:block; !important');
     }
-    if ($("#profile_work_in_another_institution_sim").is(':checked')){
+    if ($("#profile_work_in_another_institution_true").is(':checked')){
       jQuery('#another_institution_detail').attr('style','display:block; !important');
     }
-    if ($("#profile_partner_in_another_company_sim").is(':checked')){
+    if ($("#profile_partner_in_another_company_true").is(':checked')){
       jQuery('#another_company_detail').attr('style','display:block; !important');
     }
   });
 .field
-  = f.input :worked_in_public_school, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :worked_in_public_school, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.worked_in_public_school
   :javascript
     $(document).ready(function() {
-        $("#profile_worked_in_public_school_sim").change(function() {
-            if ($("#profile_worked_in_public_school_sim").is(':checked')){
+        $("#profile_worked_in_public_school_true").change(function() {
+            if ($("#profile_worked_in_public_school_true").is(':checked')){
               jQuery('#public_school_detail').attr('style','display:block; !important');
             }
             else{
               jQuery('#public_school_detail').attr('style','display:none; !important');
             }
         });
-        $("#profile_worked_in_public_school_não").change(function() {
-            if ($("#profile_worked_in_public_school_não").is(':checked')){
+        $("#profile_worked_in_public_school_false").change(function() {
+            if ($("#profile_worked_in_public_school_false").is(':checked')){
               jQuery('#public_school_detail').attr('style','display:none; !important');
             }
         });
@@ -37,19 +37,19 @@
   %br
 
 .field
-  = f.input :work_in_another_institution, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :work_in_another_institution, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.work_in_another_institution
   :javascript
     $(document).ready(function() {
-        $("#profile_work_in_another_institution_sim").change(function() {
-            if ($("#profile_work_in_another_institution_sim").is(':checked')){
+        $("#profile_work_in_another_institution_true").change(function() {
+            if ($("#profile_work_in_another_institution_true").is(':checked')){
               jQuery('#another_institution_detail').attr('style','display:block; !important');
             }
             else{
               jQuery('#another_institution_detail').attr('style','display:none; !important');
             }
         });
-        $("#profile_work_in_another_institution_não").change(function() {
-            if ($("#profile_work_in_another_institution_não").is(':checked')){
+        $("#profile_work_in_another_institution_false").change(function() {
+            if ($("#profile_work_in_another_institution_false").is(':checked')){
               jQuery('#another_institution_detail').attr('style','display:none; !important');
             }
         });
@@ -66,19 +66,19 @@
     = f.text_field :another_institution_site
 
 .field
-  = f.input :partner_in_another_company, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :partner_in_another_company, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.partner_in_another_company
   :javascript
     $(document).ready(function() {
-        $("#profile_partner_in_another_company_sim").change(function() {
-            if ($("#profile_partner_in_another_company_sim").is(':checked')){
+        $("#profile_partner_in_another_company_true").change(function() {
+            if ($("#profile_partner_in_another_company_true").is(':checked')){
               jQuery('#another_company_detail').attr('style','display:block; !important');
             }
             else{
               jQuery('#another_company_detail').attr('style','display:none; !important');
             }
         });
-        $("#profile_partner_in_another_company_não").change(function() {
-            if ($("#profile_partner_in_another_company_não").is(':checked')){
+        $("#profile_partner_in_another_company_false").change(function() {
+            if ($("#profile_partner_in_another_company_false").is(':checked')){
               jQuery('#another_company_detail').attr('style','display:none; !important');
             }
         });

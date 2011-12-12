@@ -1,21 +1,23 @@
 :javascript
   $(document).ready(function() {
-    if ($("#profile_has_disability_sim").is(':checked')){
+    if ($("#profile_has_disability_true").is(':checked')){
       jQuery('#disability_desc_div').attr('style','display:block; !important');
     }
-    if ($("#profile_take_medicenes_sim").is(':checked')){
+    if ($("#profile_take_medicenes_true").is(':checked')){
       jQuery('#medicenes_desc_div').attr('style','display:block; !important');
     }
-    if ($("#profile_allergic_sim").is(':checked')){
+    if ($("#profile_allergic_true").is(':checked')){
       jQuery('#allergic_desc_div').attr('style','display:block; !important');
     }
-    if ($("#profile_cronic_disease_sim").is(':checked')){
+    if ($("#profile_cronic_disease_true").is(':checked')){
       jQuery('#cronic_disease_desc_div').attr('style','display:block; !important');
     }
   });
   
 .field
   = f.input :name
+.field
+  = f.input :avatar, :as => :file
 .field
   .dates
     = f.input :dob, :as => :date, :order => [:day, :month, :year], :start_year => 1920, :end_year => Date.today.year 
@@ -26,7 +28,7 @@
   = f.label :naturally
   = f.text_field :naturally
 .field
-  = f.input :associated_id, :as => :select, :collection => [], :prompt => t('select')
+  = f.input :associated_id, :as => :select, :collection => @projects, :prompt => t('select')
 .field
   .dates
     = f.input :start_date, :as => :date, :order => [:day, :month, :year], :start_year => 1920, :end_year => Date.today.year 
@@ -34,13 +36,13 @@
   = f.input :civil_status, :as => :select, :collection => Profile::CIVIL_STATUS, :prompt => t('select')
 .field
   = f.label :cpf
-  = f.text_field :cpf
+  = masked_text_field(:profile, :cpf, :mask => :cpf)
 .field
   = f.label :rg
-  = f.text_field :rg
+  = masked_text_field(:profile, :rg, :mask => '99.999.999-*')
 .field
   = f.label :cep
-  = f.text_field :cep
+  = masked_text_field(:profile, :cep, :mask => :cep)
 .field
   = f.label :street
   = f.text_field :street
@@ -57,10 +59,10 @@
   = f.input :state, :as => :select, :collection => Profile::STATES, :prompt => t('select')
 .field
   = f.label :company_phone_number
-  = f.text_field :company_phone_number
+  = masked_text_field(:profile, :company_phone_number, :mask => :phone)
 .field
   = f.label :phone
-  = f.text_field :phone
+  = masked_text_field(:profile, :phone, :mask => :phone)
 .field
   = f.label :mobile
   = f.text_field :mobile
@@ -82,13 +84,13 @@
 .field
   = f.input :curriculum, :as => :file
 .field
-  = f.input :smoker, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :smoker, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.smoker
 .field
-  = f.input :has_disability, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :has_disability, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.has_disability
   :javascript
     $(document).ready(function() {
-        $("#profile_has_disability_sim").change(function() {
-            if ($("#profile_has_disability_sim").is(':checked')){
+        $("#profile_has_disability_true").change(function() {
+            if ($("#profile_has_disability_true").is(':checked')){
               jQuery('#disability_desc_div').attr('style','display:block; !important');
               jQuery('#profile_disability_desc').focus();
             }
@@ -96,8 +98,8 @@
               jQuery('#disability_desc_div').attr('style','display:none; !important');
             }
         });
-        $("#profile_has_disability_não").change(function() {
-            if ($("#profile_has_disability_não").is(':checked')){
+        $("#profile_has_disability_false").change(function() {
+            if ($("#profile_has_disability_false").is(':checked')){
               jQuery('#disability_desc_div').attr('style','display:none; !important');
             }
         });
@@ -108,11 +110,11 @@
     = f.text_field :disability_desc
 
 .field
-  = f.input :take_medicenes, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :take_medicenes, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.take_medicenes
   :javascript
     $(document).ready(function() {
-        $("#profile_take_medicenes_sim").change(function() {
-            if ($("#profile_take_medicenes_sim").is(':checked')){
+        $("#profile_take_medicenes_true").change(function() {
+            if ($("#profile_take_medicenes_true").is(':checked')){
               jQuery('#medicenes_desc_div').attr('style','display:block; !important');
               jQuery('#profile_medicenes_desc').focus();
             }
@@ -120,8 +122,8 @@
               jQuery('#medicenes_desc_div').attr('style','display:none; !important');
             }
         });
-        $("#profile_take_medicenes_não").change(function() {
-            if ($("#profile_take_medicenes_não").is(':checked')){
+        $("#profile_take_medicenes_false").change(function() {
+            if ($("#profile_take_medicenes_false").is(':checked')){
               jQuery('#medicenes_desc_div').attr('style','display:none; !important');
             }
         });
@@ -132,11 +134,11 @@
     = f.text_area :medicenes_desc, :rows => 5, :cols => 100
 
 .field
-  = f.input :allergic, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :allergic, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.allergic
   :javascript
     $(document).ready(function() {
-        $("#profile_allergic_sim").change(function() {
-            if ($("#profile_allergic_sim").is(':checked')){
+        $("#profile_allergic_true").change(function() {
+            if ($("#profile_allergic_true").is(':checked')){
               jQuery('#allergic_desc_div').attr('style','display:block; !important');
               jQuery('#profile_allergic_desc').focus();
             }
@@ -144,8 +146,8 @@
               jQuery('#allergic_desc_div').attr('style','display:none; !important');
             }
         });
-        $("#profile_allergic_não").change(function() {
-            if ($("#profile_allergic_não").is(':checked')){
+        $("#profile_allergic_false").change(function() {
+            if ($("#profile_allergic_false").is(':checked')){
               jQuery('#allergic_desc_div').attr('style','display:none; !important');
             }
         });
@@ -158,11 +160,11 @@
 .field
   = f.input :blood_type, :as => :select, :collection => Profile::BLOOD_TYPES, :prompt => t('select')
 .field
-  = f.input :cronic_disease, :as => :radio, :collection => [t('yyes'), t('nno')]
+  = f.input :cronic_disease, :as => :radio, :collection => [[t('yyes'), true], [t('nno'), false]], :value => @profile.cronic_disease
   :javascript
     $(document).ready(function() {
-        $("#profile_cronic_disease_sim").change(function() {
-            if ($("#profile_cronic_disease_sim").is(':checked')){
+        $("#profile_cronic_disease_true").change(function() {
+            if ($("#profile_cronic_disease_true").is(':checked')){
               jQuery('#cronic_disease_desc_div').attr('style','display:block; !important');
               jQuery('#profile_cronic_disease_desc').focus();
             }
@@ -170,8 +172,8 @@
               jQuery('#cronic_disease_desc_div').attr('style','display:none; !important');
             }
         });
-        $("#profile_cronic_disease_não").change(function() {
-            if ($("#profile_cronic_disease_não").is(':checked')){
+        $("#profile_cronic_disease_false").change(function() {
+            if ($("#profile_cronic_disease_false").is(':checked')){
               jQuery('#cronic_disease_desc_div').attr('style','display:none; !important');
             }
         });

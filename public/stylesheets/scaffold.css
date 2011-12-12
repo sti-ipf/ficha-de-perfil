@@ -282,7 +282,7 @@ a:active.link_as_button.red {
 }
 
 
-#disability_desc_div, #formation_detail, #medicenes_desc_div, #allergic_desc_div, #cronic_disease_desc_div, #profile_books_div, #public_school_detail, #social_moviments_detail{
+#disability_desc_div, #formation_detail, #medicenes_desc_div, #allergic_desc_div, #cronic_disease_desc_div, #profile_books_div, #public_school_detail, #social_moviments_detail, #another_company_detail, #another_institution_detail{
   display:none;
 }
 
@@ -393,7 +393,17 @@ ol.choices-group label{
   margin: 0 auto;
   padding-right: 5px;
   position: relative;
-  width: 85px;
+  width: 100px;
+}
+
+.list_avatar a img{
+  width: 100px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
 }
 .list_avatar a{
   text-align: center;

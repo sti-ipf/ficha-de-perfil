@@ -6,11 +6,11 @@
   .field
     = f.input :contact, :as => :string
   .field
-    = f.input :phone, :as => :string
+    = f.input :phone, :as => :string, :mask => :phone
   .field
-    = f.input :mobile, :as => :string
+    = f.input :mobile, :as => :string, :mask => :phone
   .field
-    = f.input :email, :as => :string
+    = f.input :email, :as => :string, :mask => :email
   %br
   = link_to_remove_fields t('remove'), f
   %br

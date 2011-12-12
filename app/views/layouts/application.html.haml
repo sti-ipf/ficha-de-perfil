@@ -3,9 +3,10 @@
   %head
     %title Perfil
     = stylesheet_link_tag :all
-    - js_files = ['jquery.min.js', 'jquery_ujs.js', 'jquery-rails.js', 'application.js']
+    - js_files = ['jquery.min.js', 'jquery_ujs.js', 'jquery-rails.js', 'jquery.meio.mask.min.js' 'application.js']
     - js_files.each do |js_file|
       = javascript_include_tag js_file
+    = javascript_include_inputs
     = csrf_meta_tag
   %body
     .header

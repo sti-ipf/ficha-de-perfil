@@ -6,7 +6,7 @@
     - @profiles.each do |profile|
       .profile_card
         .list_avatar
-          = link_to '', profile, :style => "background-image: url('images/no-face.jpg')", :class => 'card'
+          = link_to image_tag(profile.avatar.url), profile
           = link_to profile.name, profile
         .actions_links
           = link_to t('edit'), edit_profile_path(profile)
